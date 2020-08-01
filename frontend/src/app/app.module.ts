@@ -7,6 +7,11 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from "./nav/nav.component";
 import { ArticlesComponent } from "./articles/articles.component";
+import { RouterModule, Routes } from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: "", component: ArticlesComponent }
+];
 
 @NgModule({
   declarations: [
@@ -15,6 +20,7 @@ import { ArticlesComponent } from "./articles/articles.component";
     ArticlesComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
